@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ecommerce Senac</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <h1>Ecommerce Senac</h1>
+    <head>
+        <h1 class="titulo">Ecommerce Senac</h1>
+    </head>
+    <main>
+        <input class="item" id="number1" type="number">
+        <span class="item">+</span>
+        <input class="item" id="number2" type="number">
+        
+        <button class="item" disabled id="botao-somar">=</button>
+        
+        <span id="resultado" class="resultado"></span>
+    </main>
+    <footer>
+        Senac 2018
+    </footer>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
