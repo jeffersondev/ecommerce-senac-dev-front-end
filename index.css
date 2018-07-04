@@ -6,23 +6,23 @@ body {
     justify-content: space-between;
 }
 
-main {
+section {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-main .item {
+section .item {
     margin-right: 10px;
 }
 
-main button {
+section button {
     border: none;
     border-radius: 5px;
     background-color: lightgreen;
 }
 
-main button:disabled {
+section button:disabled {
     background-color: darkred;
 }
 
