@@ -29,27 +29,41 @@ function mudaEstadoButao(isDisabled, idBotao) {
     botao.disabled = isDisabled;
 }
 
-function decideEstadoBotao() {
-    if (numero1.value !== "" && numero2.value !== "") {
-        mudaEstadoButao(false, "#botao-somar");
+function decideEstadoBotao(input1, input2, idBotao) {
+    if (input1.value !== "" && input2.value !== "") {
+        mudaEstadoButao(false, idBotao);
     } else {
-        mudaEstadoButao(true, "#botao-somar");
+        mudaEstadoButao(true, idBotao);
     }
 }
 
-function zerarResultado() {
+function zerarResultadoSoma() {
     document.querySelector("#resultado-soma").innerText = "";
 }
 
-zerarResultado()
+function zerarResultadoSub() {
+    document.querySelector("#resultado-sub").innerText = "";
+}
+
+function decideEstadoSoma() {
+    decideEstadoBotao(numero1, numero2, "#botao-somar");
+}
+
+function decideEstadoSub() {
+    decideEstadoBotao(numero3, numero4, "#botao-sub");
+}
 
 document.querySelector("#botao-somar").onclick = executarSoma;
 document.querySelector("#botao-sub").onclick = executarSub;
 
 //soma bindings
-numero1.onkeyup = decideEstadoBotao;
-numero2.onkeyup = decideEstadoBotao;
-numero1.onfocus = zerarResultado;
-numero2.onfocus = zerarResultado;
+numero1.onkeyup = decideEstadoSoma;
+numero2.onkeyup = decideEstadoSoma;
+numero1.onfocus = zerarResultadoSoma;
+numero2.onfocus = zerarResultadoSoma;
 
 //sub bindings
+numero3.onkeyup = decideEstadoSub;
+numero4.onkeyup = decideEstadoSub;
+numero3.onfocus = zerarResultadoSub;
+numero4.onfocus = zerarResultadoSub;
