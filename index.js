@@ -15,6 +15,12 @@ function carregarDados() {
 function preencheHTML() {
     document.querySelector("#titulo").innerText = produtos.titulo;
     document.querySelector("#descricao").innerText = produtos.descricao;
+    document.querySelector("#preco").innerText = `R$ ${produtos.preco}`;
+    document.querySelector("#imagem-ativa").src = produtos.imagens[0];
+    document.querySelector("#imagem-1").src = produtos.imagens[0];
+    document.querySelector("#imagem-2").src = produtos.imagens[1];
+    document.querySelector("#imagem-3").src = produtos.imagens[2];
+    document.querySelector("#imagem-4").src = produtos.imagens[3];
 }
 
 carregarDados();
