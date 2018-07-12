@@ -1,4 +1,6 @@
-let produtos = {};
+let produtos = [];
+let produtoSelecionado = {};
+let parametros = window.location.search;
 
 function carregarDados() {
     let xhttp = new XMLHttpRequest();
@@ -13,14 +15,32 @@ function carregarDados() {
 }
 
 function preencheHTML() {
-    document.querySelector("#titulo").innerText = produtos.titulo;
-    document.querySelector("#descricao").innerText = produtos.descricao;
-    document.querySelector("#preco").innerText = `R$ ${produtos.preco}`;
-    document.querySelector("#imagem-ativa").src = produtos.imagens[0];
-    document.querySelector("#imagem-1").src = produtos.imagens[0];
-    document.querySelector("#imagem-2").src = produtos.imagens[1];
-    document.querySelector("#imagem-3").src = produtos.imagens[2];
-    document.querySelector("#imagem-4").src = produtos.imagens[3];
+    let parametroProduto = 0;
+    if (parametros.includes("produto=")) {
+        parametroProduto = parametros.substring(parametros.indexOf("produto=") + 8);
+        parametroProduto = parametroProduto >= produtos.length ? 0 : parametroProduto;
+    }
+
+    produtoSelecionado = produtos[parametroProduto];
+    document.querySelector("#titulo").innerText = produtoSelecionado.titulo;
+    document.querySelector("#descricao").innerText = produtoSelecionado.descricao;
+    document.querySelector("#preco").innerText = `R$ ${produtoSelecionado.preco}`;
+    document.querySelector("#imagem-ativa").src = produtoSelecionado.imagens[0];
+    document.querySelector("#imagem-0").classList.add("selecionada");
+    document.querySelector("#imagem-0").src = produtoSelecionado.imagens[0];
+    document.querySelector("#imagem-1").src = produtoSelecionado.imagens[1];
+    document.querySelector("#imagem-2").src = produtoSelecionado.imagens[2];
+    document.querySelector("#imagem-3").src = produtoSelecionado.imagens[3];
+}
+
+function selecionarImagem(indice) {
+    document.querySelector("#imagem-0").classList.remove("selecionada");
+    document.querySelector("#imagem-1").classList.remove("selecionada");
+    document.querySelector("#imagem-2").classList.remove("selecionada");
+    document.querySelector("#imagem-3").classList.remove("selecionada");
+
+    document.querySelector("#imagem-" + indice).classList.add("selecionada");
+    document.querySelector("#imagem-ativa").src = produtoSelecionado.imagens[indice];
 }
 
 carregarDados();
