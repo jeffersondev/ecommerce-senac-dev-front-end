@@ -1,7 +1,27 @@
-.imagens img {
+img {
     max-width: 100%;
+    max-height: 100%;
 }
 
 img.selecionada {
     border: solid 2px greenyellow;
+}
+
+main {
+    margin-bottom: 50px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > .link-interno {
+    margin: 5px 10px;
 }
