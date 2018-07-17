@@ -1,0 +1,18 @@
+[
+    {
+        "href": "/index.html",
+        "nomeExibicao": "Pagina inicial"
+    },
+    {
+        "href": "/sobre.html",
+        "nomeExibicao": "Sobre"
+    },
+    {
+        "href": "/produtos.html",
+        "nomeExibicao": "Produtos"
+    },
+    {
+        "href": "/contatos.html",
+        "nomeExibicao": "Contatos"
+    }
+]
