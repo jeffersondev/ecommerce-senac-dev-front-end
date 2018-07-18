@@ -11,13 +11,11 @@ function carregarLinks() {
 }
 
 function preencherHtmlFooter(links) {
-    const footerHtml = `
-        <a class="link-interno" href="${links[0].href}">${links[0].nomeExibicao}</a>
-        <a class="link-interno" href="${links[1].href}">${links[1].nomeExibicao}</a>
-        <a class="link-interno" href="${links[2].href}">${links[2].nomeExibicao}</a>
-        <a class="link-interno" href="${links[3].href}">${links[3].nomeExibicao}</a>
-    `;
-
+    let footerHtml = "";
+    for (let i = 0; i < links.length; i++) {
+        const elemento = links[i];
+        footerHtml += `<a class="link-interno" href="${elemento.href}">${elemento.nomeExibicao}</a>`;
+    }
     document.querySelector("#footer").innerHTML = footerHtml;
 }
 
