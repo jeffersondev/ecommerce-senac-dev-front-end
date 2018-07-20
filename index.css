@@ -11,6 +11,18 @@ main {
     margin-bottom: 50px;
 }
 
+#lista-produtos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#lista-produtos .card {
+    width: 200px;
+    height: 400px;
+    margin: 10px;
+}
+
 footer {
     width: 100%;
     background-color: black;
