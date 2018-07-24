@@ -16,7 +16,7 @@ function preencherHtmlProdutos(produtos) {
     for (let i = 0; i < produtos.length; i++) {
         const elemento = produtos[i];
         listaProdutosHtml += `
-        <div class="card">
+        <div id="card-${i}" class="card">
             <img class="card-img-top" src="${elemento.imagens[0]}"
                 alt="Card image cap">
             <div class="card-body">
