@@ -21,7 +21,7 @@ function preencherHtmlProdutos(produtos) {
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${elemento.titulo}</h5>
-                <p class="card-text">${elemento.descricao}</p>
+                <p class="card-text text-truncate">${elemento.descricao}</p>
                 <a href="/produto.html?produto=${i}" class="btn btn-primary">Detalhes</a>
             </div>
         </div>

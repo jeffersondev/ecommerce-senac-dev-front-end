@@ -13,14 +13,18 @@ main {
 
 #lista-produtos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 #lista-produtos .card {
-    width: 200px;
-    height: 400px;
+    width: 250px;
+    height: 500px;
     margin: 10px;
+}
+
+#loadingDiv {
+    background-color: blue;
 }
 
 footer {

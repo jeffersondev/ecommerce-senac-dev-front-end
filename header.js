@@ -1,18 +1,25 @@
 $(document).ready(function () {
     $("#form-search").submit(function (e) {
         e.preventDefault();
-        const search = $("#input-search").val();
+        const search = $("#input-search").val().toLowerCase();
         const cards = $(".card");
-        cards.each(function () {
-            const elemento = $(this);
-            if (!elemento.text().includes(search)) {
-                elemento.fadeOut();
-            }
-        });
+
+        if (search === "") {
+            cards.show();
+        } else {
+            cards.each(function () {
+                const elemento = $(this);
+                const textoElemento = elemento.text().toLowerCase();
+
+                if (textoElemento.includes(search)) {
+                    elemento.show();
+                } else {
+                    elemento.hide();
+                }
+            });
+        }
     })
 })
-
-window.onload
 
 function carregarHeader() {
     $.ajax({
